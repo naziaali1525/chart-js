@@ -3,7 +3,7 @@ function initialize(){
 let myChart = document.getElementById('mychart').getContext('2d');
 
 let massPopChart = new Chart(myChart, {
-    type:'bar',
+    type:'pie',
     data:{
         labels:['Karachi', 'Lahore', 'Faisalabad', 'Rawalpindi', 'Peshawar','Hyderabad', 'Islamabad'],
         datasets:[{
@@ -25,11 +25,21 @@ let massPopChart = new Chart(myChart, {
                 'rgba(55, 190, 60, 0.6)',
                 'rgba(255, 20, 40, 0.6)',
                 'rgba(40, 255, 20, 0.6)'
-            ]
+            ],
+            borderWidth: 1,
+            borderColor: '#777',
+            hoverBorderWidth: 2,
+            hoverBorderColor: '#888888'
 
         }]
 
     },
-    option:{}
+    options:{
+        title: {
+            display: true,
+            text: 'Largest Cities in Pakistan',
+            fontSize: 25,
+        }
+    }
 });
 }
