@@ -1,41 +1,35 @@
-function initialize() {
+function initialize(){
     
-let ctx = document.querySelector('#myChart').getContext('2d');
+let myChart = document.getElementById('mychart').getContext('2d');
 
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+let massPopChart = new Chart(myChart, {
+    type:'bar',
+    data:{
+        labels:['Karachi', 'Lahore', 'Faisalabad', 'Rawalpindi', 'Peshawar','Hyderabad', 'Islamabad'],
+        datasets:[{
+            label: 'Population',
+            data:[
+                14916456,
+                11126285,
+                3204726,
+                2098231,
+                2027001,
+                1734309,
+                1009832
             ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
+            backgroundColor:[
+                'rgba(255, 99, 135, 0.6)',
+                'rgba(55, 156, 274, 0.6)',
+                'rgba(255, 220, 55, 0.6)',
+                'rgba(105, 70, 255, 0.6)',
+                'rgba(55, 190, 60, 0.6)',
+                'rgba(255, 20, 40, 0.6)',
+                'rgba(40, 255, 20, 0.6)'
+            ]
+
         }]
+
     },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
-    }
+    option:{}
 });
 }
